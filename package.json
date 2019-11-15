@@ -1,6 +1,6 @@
 {
-  "_from": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
-  "_id": "iobroker.sunnyportal@0.0.1",
+  "_from": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
+  "_id": "iobroker.sunnyportal@0.0.2",
   "_inBundle": false,
   "_integrity": "sha512-ZZLpjtUZ9kvlXmFlrvZ2qPilh+IGxnVDmUuzJi3yX8dK+LxsZaC07lrPD7GSixkOJLn42lPZ1ms7iaXWSeZeUg==",
   "_location": "/iobroker.sunnyportal",

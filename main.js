@@ -159,6 +159,10 @@ function homemanager(httpResponse) {
         create_indicator('grid_consumption', 'grid consumption', obj.GridConsumption);
         create_indicator('self_consumption', 'self consumption', obj.SelfConsumption);
         create_indicator('self_consumption_quote', 'self consumption quote', obj.SelfConsumptionQuote);
+
+        create_indicator('self_production', 'self production', obj.PV);
+        create_indicator('grid_feedin', 'grid feed in', obj.FeedIn);
+
         create_indicator('autarky_quote', 'autarky quote', obj.AutarkyQuote);
         if (!obj.Timestamp) {
             adapter.log.debug('no data!');
