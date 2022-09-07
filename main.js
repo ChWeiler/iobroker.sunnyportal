@@ -63,6 +63,7 @@ adapter.on('stateChange', function (id, state) {
 
 // 07.09.2022	C.Weiler	datatype
 function create_indicator(name, description, value, datatype) {
+	
     adapter.getObject(name, function(err, obj) { 
         if (!obj) {
             adapter.setObject(name, {
@@ -140,17 +141,17 @@ function homemanager(httpResponse) {
         }
 
         adapter.log.debug(JSON.stringify(obj));
-        create_indicator('infos', 'info messages', null);
+        create_indicator('infos', 'info messages', null,'string');
         obj.InfoMessages.forEach(function(element, index) {
             adapter.log.info("info[" + index + "] " + element);
             create_indicator('infos.' + index, 'info message ' + index, element,'string');
         });
-        create_indicator('warnings', 'warning messages', null);
+        create_indicator('warnings', 'warning messages', null,'string');
         obj.WarningMessages.forEach(function(element, index) {
             adapter.log.info("warning[" + index + "] " + element);
             create_indicator('warnings.' + index, 'warning message ' + index, element,'string');
         });
-        create_indicator('errors', 'error messages', null);
+        create_indicator('errors', 'error messages', null,'string');
         obj.ErrorMessages.forEach(function(element, index) {
             adapter.log.info("errors[" + index + "]" + element);
             create_indicator('errors.' + index, 'error message ' + index, element,'string');
