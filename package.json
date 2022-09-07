@@ -1,30 +1,30 @@
 {
-  "_from": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
-  "_id": "iobroker.sunnyportal@0.0.2",
+  "_from": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master",
+  "_id": "iobroker.sunnyportal@0.0.3",
   "_inBundle": false,
   "_integrity": "sha512-ZZLpjtUZ9kvlXmFlrvZ2qPilh+IGxnVDmUuzJi3yX8dK+LxsZaC07lrPD7GSixkOJLn42lPZ1ms7iaXWSeZeUg==",
   "_location": "/iobroker.sunnyportal",
   "_phantomChildren": {},
   "_requested": {
     "type": "remote",
-    "raw": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
-    "rawSpec": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
-    "saveSpec": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
-    "fetchSpec": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master"
+    "raw": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master",
+    "rawSpec": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master",
+    "saveSpec": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master",
+    "fetchSpec": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master"
   },
   "_requiredBy": [
     "#USER"
   ],
-  "_resolved": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
+  "_resolved": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master",
   "_shasum": "560ae2b9a02d158371707e4de05159ba534f223e",
-  "_spec": "https://github.com/andyp84/iobroker.sunnyportal/tarball/master",
+  "_spec": "https://github.com/ChWeiler/iobroker.sunnyportal/tarball/master",
   "_where": "G:\\temp\\iobroker\\node_modules\\iobroker",
   "author": {
     "name": "Klaus Gerlicher",
     "email": "klaus@klausgerlicher.de"
   },
   "bugs": {
-    "url": "https://github.com/andyp84/iobroker.sunnyportal/issues"
+    "url": "https://github.com/ChWeiler/iobroker.sunnyportal/issues"
   },
   "bundleDependencies": false,
   "contributors": [
@@ -46,7 +46,7 @@
     "mocha": "^4.1.0",
     "@iobroker/testing": "^1.1.10"
   },
-  "homepage": "https://github.com/andyp84/iobroker.sunnyportal",
+  "homepage": "https://github.com/ChWeiler/iobroker.sunnyportal",
   "keywords": [
     "ioBroker",
     "sunnyportal"
@@ -56,7 +56,7 @@
   "name": "iobroker.sunnyportal",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andyp84/iobroker.sunnyportal.git"
+    "url": "git+https://github.com/ChWeiler/iobroker.sunnyportal.git"
   },
   "scripts": {
     "test": "npm run test:package && npm run test:unit",
@@ -64,5 +64,5 @@
     "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

@@ -2,6 +2,7 @@
  *
  * sunnyportal adapter
  *
+ * 07.09.2022	C.Weiler add more results
  */
 
 /* jshint -W097 */// jshint strict:false
@@ -60,7 +61,8 @@ adapter.on('stateChange', function (id, state) {
     var l = id.split('.');
 });
 
-function create_indicator(name, description, value) {
+// 07.09.2022	C.Weiler	datatype
+function create_indicator(name, description, value, datatype) {
     adapter.getObject(name, function(err, obj) { 
         if (!obj) {
             adapter.setObject(name, {
@@ -68,7 +70,7 @@ function create_indicator(name, description, value) {
                 common: {
                     name: description,
                     role: 'state',
-                    type: "boolean",
+                    type: datatype,
                     "read":  true,
                     "write": false
                     },
@@ -141,35 +143,42 @@ function homemanager(httpResponse) {
         create_indicator('infos', 'info messages', null);
         obj.InfoMessages.forEach(function(element, index) {
             adapter.log.info("info[" + index + "] " + element);
-            create_indicator('infos.' + index, 'info message ' + index, element);
+            create_indicator('infos.' + index, 'info message ' + index, element,'string');
         });
         create_indicator('warnings', 'warning messages', null);
         obj.WarningMessages.forEach(function(element, index) {
             adapter.log.info("warning[" + index + "] " + element);
-            create_indicator('warnings.' + index, 'warning message ' + index, element);
+            create_indicator('warnings.' + index, 'warning message ' + index, element,'string');
         });
         create_indicator('errors', 'error messages', null);
         obj.ErrorMessages.forEach(function(element, index) {
             adapter.log.info("errors[" + index + "]" + element);
-            create_indicator('errors.' + index, 'error message ' + index, element);
+            create_indicator('errors.' + index, 'error message ' + index, element,'string');
         });
 
 
-        create_indicator('total_consumption', 'total consumption', obj.TotalConsumption);
-        create_indicator('grid_consumption', 'grid consumption', obj.GridConsumption);
-        create_indicator('self_consumption', 'self consumption', obj.SelfConsumption);
-        create_indicator('self_consumption_quote', 'self consumption quote', obj.SelfConsumptionQuote);
+        create_indicator('total_consumption', 'total consumption', obj.TotalConsumption, 'number');
+        create_indicator('grid_consumption', 'grid consumption', obj.GridConsumption, 'number');
+        create_indicator('self_consumption', 'self consumption', obj.SelfConsumption, 'number');
+        create_indicator('self_consumption_quote', 'self consumption quote', obj.SelfConsumptionQuote, 'number');
 
-        create_indicator('self_production', 'self production', obj.PV);
-        create_indicator('grid_feedin', 'grid feed in', obj.FeedIn);
+        create_indicator('self_production', 'self production', obj.PV, 'number');
+        create_indicator('grid_feedin', 'grid feed in', obj.FeedIn, 'number');
+		// 07.09.2022	C.Weiler
+        create_indicator('direct_consumption'      , 'direct consumption'      , obj.DirectConsumption     , 'number');
+        create_indicator('self_supply'             , 'self supply'             , obj.SelfSupply            , 'number');
+        create_indicator('direct_consumption_quote', 'direct consumption quote', obj.DirectConsumptionQuote, 'number');
+        create_indicator('battery_in'              , 'battery in'              , obj.BatteryIn             , 'number');
+        create_indicator('battery_out'             , 'battery out'             , obj.BatteryOut            , 'number');
+        create_indicator('battery_charge_status'   , 'battery charge status'   , obj.BatteryChargeStatus   , 'number');
 
-        create_indicator('autarky_quote', 'autarky quote', obj.AutarkyQuote);
+        create_indicator('autarky_quote', 'autarky quote', obj.AutarkyQuote, 'number');
         if (!obj.Timestamp) {
             adapter.log.debug('no data!');
             reset();
             return;
         }
-        create_indicator('last_update', 'time of last update', obj.Timestamp.DateTime);
+        create_indicator('last_update', 'time of last update', obj.Timestamp.DateTime,'object');
 
         if (timer == 0) {
             timer = setInterval(homemanager, (adapter.config.interval >= 15) ? adapter.config.interval * 1000 : 15*1000);
