@@ -2,6 +2,53 @@
 # ioBroker.sunnyportal
 ![Number of Installations](http://iobroker.live/badges/sunnyportal-installed.svg) ![Number of Installations](http://iobroker.live/badges/sunnyportal-stable.svg) =================
 
+## Fork from https://github.com/kgerlich/iobroker.sunnyportal
+Result fom SunnyPortal:
+<code>
+{
+"__type":"LiveDataUI",
+"Timestamp":{
+"__type":"DateTime",
+"DateTime":"2022-09-07T08:49:29",
+"Kind":"Unspecified"
+},
+"TimestampUtc":{
+"__type":"DateTime",
+"DateTime":"2022-09-07T06:49:29",
+"Kind":"Utc"
+},
+"PV":1136,
+"FeedIn":0,
+"GridConsumption":0,
+"DirectConsumption":300,
+"SelfConsumption":1136,
+"SelfSupply":300,
+"TotalConsumption":300,
+"DirectConsumptionQuote":26,
+"SelfConsumptionQuote":100,
+"AutarkyQuote":100,
+"BatteryIn":836,
+"BatteryOut":0,
+"BatteryChargeStatus":11,
+"OperationHealth":null,
+"BatteryStateOfHealth":null,
+"ModuleTemperature":null,
+"EnvironmentTemperature":null,
+"WindSpeed":null,
+"Insolation":null,
+"BatteryMode":null,
+"InfoMessages":[
+],
+"WarningMessages":[
+],
+"ErrorMessages":[
+],
+"Info":{
+}
+}
+</code>
+
+
 This adapter connects a Sunnyportal.
 
 ## License
